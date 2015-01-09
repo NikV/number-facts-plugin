@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Number Facts Plugin
- * Description:
+ * Description: Simple facts about numbers. Simply delivered into a neat dashboard widget
  * Author: Nikhil Vimal
  * Author URI: http://nik.techvoltz.com
  * Version: 1.0
