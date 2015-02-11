@@ -37,11 +37,18 @@ Class Number_Facts_Dashboard_Widget {
 
 
 	public function number_facts_dashboard_widget_function() {
-
+		
 		$jsonurl = "http://numbersapi.com/random/year?json";
-		$json = file_get_contents($jsonurl);
-		$json_output = json_decode($json);
-		echo $json_output->text;
+			$json  = wp_remote_get( $jsonurl );
+			if ( is_wp_error( $json ) ) {
+				return "No Number Facts :(. Please wait a bit.";
+			}
+			else {
+				// If everything's okay, parse the body and json_decode it
+				$json_output = json_decode( wp_remote_retrieve_body( $json ));
+				$joke        = $json_output->text;
+			
+			}
 
 		echo '<p><strong>Refresh Page for a new random year fact!</strong></p>';
 	}
