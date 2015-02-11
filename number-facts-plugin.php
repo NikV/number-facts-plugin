@@ -46,7 +46,8 @@ Class Number_Facts_Dashboard_Widget {
 			else {
 				// If everything's okay, parse the body and json_decode it
 				$json_output = json_decode( wp_remote_retrieve_body( $json ));
-				$joke        = $json_output->text;
+				$fact        = $json_output->text;
+				echo esc_html($fact);
 			
 			}
 
