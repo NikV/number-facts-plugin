@@ -37,7 +37,7 @@ Class Number_Facts_Dashboard_Widget {
 
 
 	public function number_facts_dashboard_widget_function() {
-		
+		// JSON URL getting random year fact 
 		$jsonurl = "http://numbersapi.com/random/year?json";
 			$json  = wp_remote_get( $jsonurl );
 			if ( is_wp_error( $json ) ) {
